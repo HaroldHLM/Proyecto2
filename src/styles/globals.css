@@ -1,0 +1,195 @@
+/* Importar fuentes de Google */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+/* Variables CSS inspiradas en Cancan Furnishings */
+:root {
+  /* Colores principales */
+  --color-primary: #000000;
+  --color-secondary: #f8f7f5;
+  --color-accent: #8B4513;
+  --color-text: #1a1a1a;
+  --color-text-light: #666666;
+  --color-text-muted: #999999;
+  --color-background: #ffffff;
+  --color-background-light: #f9f9f9;
+  --color-border: #e5e5e5;
+
+  /* Tipografía */
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-secondary: 'Playfair Display', Georgia, serif;
+
+  /* Tamaños */
+  --font-xs: 0.75rem;
+  --font-sm: 0.875rem;
+  --font-base: 1rem;
+  --font-lg: 1.125rem;
+  --font-xl: 1.25rem;
+  --font-2xl: 1.5rem;
+  --font-3xl: 1.875rem;
+  --font-4xl: 2.25rem;
+  --font-5xl: 3rem;
+
+  /* Espaciado */
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 2.5rem;
+  --space-3xl: 3rem;
+  --space-4xl: 4rem;
+  --space-5xl: 5rem;
+
+  /* Breakpoints */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+
+  /* Sombras */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+
+  /* Transiciones */
+  --transition: 0.3s ease;
+  --transition-fast: 0.15s ease;
+}
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-primary);
+  font-size: var(--font-base);
+  line-height: 1.6;
+  color: var(--color-text);
+  background-color: var(--color-background);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Tipografía */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-secondary);
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: var(--space-md);
+}
+
+h1 { font-size: var(--font-5xl); }
+h2 { font-size: var(--font-4xl); }
+h3 { font-size: var(--font-3xl); }
+h4 { font-size: var(--font-2xl); }
+h5 { font-size: var(--font-xl); }
+h6 { font-size: var(--font-lg); }
+
+p {
+  margin-bottom: var(--space-md);
+  color: var(--color-text-light);
+}
+
+/* Enlaces */
+a {
+  color: var(--color-text);
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-accent);
+}
+
+/* Listas */
+ul, ol {
+  list-style: none;
+}
+
+/* Imágenes */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Botones base */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-md) var(--space-xl);
+  font-size: var(--font-sm);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-background);
+  border-color: var(--color-primary);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-background);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-text);
+  border-color: var(--color-text);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-text);
+  color: var(--color-background);
+}
+
+/* Contenedores */
+.container {
+  max-width: var(--breakpoint-xl);
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+.section {
+  padding: var(--space-5xl) 0;
+}
+
+/* Grid sistema */
+.grid {
+  display: grid;
+  gap: var(--space-lg);
+}
+
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+/* Utilidades */
+.text-center { text-align: center; }
+.text-uppercase { text-transform: uppercase; }
+.hidden { display: none; }
+
+/* Responsive helpers */
+@media (max-width: 767px) {
+  .hidden-mobile { display: none; }
+  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+}
+
+@media (min-width: 768px) {
+  .hidden-desktop { display: none; }
+}
