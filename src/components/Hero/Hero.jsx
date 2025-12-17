@@ -5,7 +5,16 @@ const Hero = () => {
   return (
     <section className="hero">
       <div className="hero-background">
-        {/* Imagen de fondo - por ahora usaremos un gradiente */}
+        <video 
+          className="hero-video" 
+          src="../../../public/videos/mueble.mp4" 
+          autoPlay 
+          muted 
+          loop 
+          playsInline
+          >
+
+          </video>
       </div>
       
       <div className="hero-content">
